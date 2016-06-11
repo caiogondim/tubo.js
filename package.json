@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "tap --cov test/*.js"
   },
   "repository": {
     "type": "git",
