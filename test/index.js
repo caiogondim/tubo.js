@@ -24,7 +24,7 @@ tap.test('functions with single arguments', assert => {
 
 tap.test('functions with multiple arguments', assert => {
   const double = x => x + x
-  const add = (x, y) =>  x + y
+  const add = (x, y) => x + y
   const boundScore = (min, max, score) => {
     return Math.max(min, Math.min(max, score))
   }
@@ -41,6 +41,14 @@ tap.test('functions with multiple arguments', assert => {
   assert.end()
 })
 
+// tap.test('promises', assert => {
+//
+// })
+//
+// tap.test('async/await', assert => {
+//
+// })
+
 //
 // Motivating examples
 //
@@ -48,22 +56,22 @@ tap.test('functions with multiple arguments', assert => {
 tap.test('objet decorators', assert => {
   // Setup
 
-  function greets (person) {
-    person.greet = () => `${person.name} says hi!`;
-    return person;
+  const greets = person => {
+    person.greet = () => `${person.name} says hi!`
+    return person
   }
-  function ages (age) {
+  const ages = age => {
     return function (person) {
-      person.age = age;
-      person.birthday = function () { person.age += 1; };
-      return person;
+      person.age = age
+      person.birthday = function () { person.age += 1 }
+      return person
     }
   }
-  function programs (favLang) {
+  const programs = favLang => {
     return function (person) {
-      person.favLang = favLang;
-      person.program = () => `${person.name} starts to write ${person.favLang}!`;
-      return person;
+      person.favLang = favLang
+      person.program = () => `${person.name} starts to write ${person.favLang}!`
+      return person
     }
   }
 
@@ -72,7 +80,7 @@ tap.test('objet decorators', assert => {
       { name: name },
       greets,
       ages(age)
-    );
+    )
   }
 
   function Programmer (name, age) {
@@ -104,18 +112,18 @@ tap.test('objet decorators', assert => {
 tap.test('validation', assert => {
   // Setup
 
-  function bounded (prop, min, max) {
-    return function (obj) {
-      if ( obj[prop] < min || obj[prop] > max ) throw Error('out of bounds');
-      return obj;
-    };
+  const bounded = (prop, min, max) => {
+    return obj => {
+      if (obj[prop] < min || obj[prop] > max) throw Error('out of bounds')
+      return obj
+    }
   }
 
-  function format (prop, regex) {
-    return function (obj) {
-      if ( ! regex.test(obj[prop]) ) throw Error('invalid format');
-      return obj;
-    };
+  const format = (prop, regex) => {
+    return (obj) => {
+      if (!regex.test(obj[prop])) throw Error('invalid format')
+      return obj
+    }
   }
 
   const validatePerson = person => {
@@ -127,7 +135,8 @@ tap.test('validation', assert => {
   }
 
   // Tests
-  assert.throws(function() {
+
+  assert.throws(() => {
     validatePerson({age: 101, name: 'Kyle'})
   })
   assert.end()

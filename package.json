@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "lint": "standard test/* src/*",
     "test": "tap --cov test/*.js"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/caiogondim/pipe.js/issues"
   },
-  "homepage": "https://github.com/caiogondim/pipe.js#readme"
+  "homepage": "https://github.com/caiogondim/pipe.js#readme",
+  "devDependencies": {
+    "standard": "^7.1.2"
+  }
 }
