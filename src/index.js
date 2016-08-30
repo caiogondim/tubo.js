@@ -1,11 +1,9 @@
-'use strict'
-
-const isThenable = (obj) => {
+const isThenable = obj => {
   return typeof obj === 'object' && typeof obj.then === 'function'
 }
 
 const pipe = (...procs) => {
-  var output
+  let output
 
   procs.forEach((proc, i) => {
     if (isThenable(output)) {

@@ -1,17 +1,9 @@
 const tap = require('tap')
 const pipe = require('../src/')
 
-const double = (x) => {
-  return 2 * x
-}
-
-const square = (x) => {
-  return x * x
-}
-
-const returns4 = () => {
-  return 4
-}
+const double = x => 2 * x
+const square = x => x * x
+const returns4 = _ => 4
 
 tap.test('first argument literal and rest functions', test => {
   const output = pipe(

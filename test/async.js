@@ -2,17 +2,8 @@ const tap = require('tap')
 const pipe = require('../src/')
 
 tap.test('async', test => {
-  const getInitialValue = () => {
-    return new Promise((resolve, reject) => {
-      resolve(2)
-    })
-  }
-
-  const doubleAsync = function (n) {
-    return new Promise((resolve, reject) => {
-      resolve(n * 2)
-    })
-  }
+  const getInitialValue = _ => new Promise(resolve => resolve(2))
+  const doubleAsync = n => new Promise(resolve => resolve(n * 2))
 
   test.test('first argument is a Promise and rest functions that returns Promise', test => {
     pipe(
