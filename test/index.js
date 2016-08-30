@@ -1,10 +1,55 @@
-'use strict'
-
-// Test cases from:
-// - https://github.com/mindeavor/es-pipeline-operator
-
 const tap = require('tap')
 const pipe = require('../src/')
+
+const double = (x) => {
+  return 2 * x
+}
+
+const square = (x) => {
+  return x * x
+}
+
+const returns4 = () => {
+  return 4
+}
+
+tap.test('first argument literal and rest functions', test => {
+  const output = pipe(
+    2,
+    double,
+    square
+  )
+
+  test.assert(output === 16)
+  test.end()
+})
+
+tap.test('all arguments functions', test => {
+  const output = pipe(
+    returns4,
+    double,
+    square
+  )
+
+  test.assert(output === 64)
+  test.end()
+})
+
+// Whenever a literal hits the pipe, it overwrites the output.
+tap.test('mixed arguments', test => {
+  const output = pipe(
+    returns4,
+    2,
+    square
+  )
+
+  test.assert(output === 4)
+  test.end()
+})
+
+//
+// Test cases from: https://github.com/mindeavor/es-pipeline-operator
+//
 
 tap.test('functions with single arguments', assert => {
   const doubleSay = str => str + ', ' + str
