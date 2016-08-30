@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/caiogondim/pipe.js#readme",
   "devDependencies": {
-    "standard": "^7.1.2"
+    "standard": "^7.1.2",
+    "tap": "^7.0.0"
   }
 }
