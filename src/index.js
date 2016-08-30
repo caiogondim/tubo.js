@@ -38,7 +38,9 @@ const pipeAsync = (...funcs) => {
 }
 
 const pipe = (result, ...funcs) => {
-  if (isThenable(result)) {
+  if (typeof result === 'function') {
+    return pipe(result(), ...funcs)
+  } else if (isThenable(result)) {
     return pipeAsync(result, ...funcs)
   } else {
     return pipeSync(result, ...funcs)
