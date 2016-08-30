@@ -41,14 +41,6 @@ tap.test('functions with multiple arguments', assert => {
   assert.end()
 })
 
-// tap.test('promises', assert => {
-//
-// })
-//
-// tap.test('async/await', assert => {
-//
-// })
-
 //
 // Motivating examples
 //
