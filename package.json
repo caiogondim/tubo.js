@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "standard test/* src/*",
-    "test": "tap --cov test/*.js"
+    "test": "tap --cov test/*.js",
+    "lint": "standard 'test/**/*.js' 'src/**/*.js'"
   },
   "repository": {
     "type": "git",

@@ -2,14 +2,13 @@ const tap = require('tap')
 const pipe = require('../src/')
 
 tap.test('async', test => {
-
   const getInitialValue = () => {
     return new Promise((resolve, reject) => {
       resolve(2)
     })
   }
 
-  const doubleAsync = function(n) {
+  const doubleAsync = function (n) {
     return new Promise((resolve, reject) => {
       resolve(n * 2)
     })
