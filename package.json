@@ -1,5 +1,5 @@
 {
-  "name": "@caiogondim/pipeline",
+  "name": "@caiogondim/pipe",
   "version": "1.0.0",
   "description": "Function to mimic pipe operator",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiogondim/pipeline.js.git"
+    "url": "git+https://github.com/caiogondim/pipe.js.git"
   },
   "keywords": [
     "pipeline",
@@ -23,7 +23,7 @@
   "author": "Caio Gondim <me@caiogondim.com> (http://caiogondim.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/caiogondim/pipeline.js/issues"
+    "url": "https://github.com/caiogondim/pipe.js/issues"
   },
   "homepage": "https://github.com/caiogondim/pipe.js#readme",
   "devDependencies": {
