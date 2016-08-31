@@ -2,6 +2,8 @@
 
 # pipe.js
 
+<img src="http://travis-ci.org/caiogondim/pipe.js.svg?branch=master" alt="Travis CI">
+
 Pipe function works like the pipe operator more common in functional programming
 languages, like Erlang.
 
