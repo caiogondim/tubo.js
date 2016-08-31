@@ -2,8 +2,6 @@
 
 # pipe.js
 
-## Usage
-
 Pipe function works like the pipe operator more common in functional programming
 languages, like Erlang.
 
@@ -13,6 +11,8 @@ If all arguments are sync functions or literal, the pipe will run as a normal
 function returning the last value computed. In case one of the arguments is a
 function that returns a promise or a promise instance (then-able object), a
 promise will be returned at the end.
+
+## Usage
 
 ### Sync
 
