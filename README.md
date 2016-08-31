@@ -55,9 +55,9 @@ It is also possible to mix sync and async arguments.
 Whenever a function that generates promises or a promise intance is found,
 the lib switchs to async mode and will return a `Promise`.
 
-### Examples
+## Examples
 
-#### Validation (sync and async)
+### Validation (sync and async)
 
 ```js
 // Before
@@ -84,7 +84,7 @@ try {
 }
 ```
 
-#### Straight-forward Cases
+### Straight-forward Cases
 
 ```js
 // Before
@@ -102,7 +102,7 @@ if ( cache && localStorage.getItem(endpoint) ) {
 }
 ```
 
-#### Usage with const
+### Usage with const
 
 ```js
 // Before
@@ -116,7 +116,7 @@ const items = pipe(
 )
 ```
 
-#### Functional Updates
+### Functional Updates
 
 ```js
 // Before:
