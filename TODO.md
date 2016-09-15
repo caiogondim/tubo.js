@@ -4,3 +4,4 @@
 - [ ] favicon
 - [ ] npm publish
 - [ ] readme footer
+- [ ] codecov badge
