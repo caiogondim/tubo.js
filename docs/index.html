@@ -3,8 +3,134 @@
   <head>
     <meta charset="utf-8">
     <title>pipe.js</title>
+    <link rel="stylesheet" href="./github-markdown.css">
+    <link rel="stylesheet" href="./prism.css">
+    <style>
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+    </style>
   </head>
-  <body>
-    pipe.js
+  <body class="markdown-body">
+    <p><img src="http://rawgit.com/caiogondim/pipe.js/master/img/icon.svg"></p>
+<h1 id="pipe-js">pipe.js</h1>
+<p><img src="http://travis-ci.org/caiogondim/pipe.js.svg?branch=master" alt="Travis CI"></p>
+<p>Pipe function works like the pipe operator more common in functional programming
+languages, like Erlang.</p>
+<p>This lib supports <strong>sync</strong> and <strong>async</strong> arguments.</p>
+<p>If all arguments are sync functions or literal, the pipe will run as a normal
+function returning the last value computed. In case one of the arguments is a
+function that returns a promise or a promise instance (then-able object), a
+promise will be returned at the end.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="sync">Sync</h3>
+<pre><code class="lang-js">function double(x) {
+  return x * 2;
+}
+
+function square(x) {
+  return x * x;
+}
+
+var output = pipe(
+  2,
+  double,
+  square
+);
+console.log(output); // =&gt; 16
+</code></pre>
+<h3 id="async">Async</h3>
+<pre><code class="lang-js">pipe(
+  bookingDetails.userId,
+  fetchUserById, // async
+  JSON.parse
+)
+  .then(function(result) {
+    console.log(result);
+  })
+  .catch(function(error) {
+    console.log(error);
+  })
+</code></pre>
+<h3 id="mixed">Mixed</h3>
+<p>It is also possible to mix sync and async arguments.
+Whenever a function that generates promises or a promise intance is found,
+the lib switchs to async mode and will return a <code>Promise</code>.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="validation-sync-and-async-">Validation (sync and async)</h3>
+<pre><code class="lang-js">// Before
+function validateEmail(email) {
+  email = trim(email)
+  validateEmailTld(email)
+  validateEmailFormat(email)
+}
+
+// After
+function validateEmail(email) {
+  return pipe(
+    email,
+    trim,
+    validateEmailTld,
+    validateEmailFormat
+  )
+}
+
+try {
+  validateEmail(&#39;john@email.com&#39;)
+} catch (error) {
+  console.log(error)
+}
+</code></pre>
+<h3 id="straight-forward-cases">Straight-forward Cases</h3>
+<pre><code class="lang-js">// Before
+if ( cache &amp;&amp; localStorage.getItem(endpoint) ) {
+  return m.prop( JSON.parse( localStorage.get(endpoint) ) )
+}
+
+// After
+if ( cache &amp;&amp; localStorage.getItem(endpoint) ) {
+  return pipe(
+    localStorage.get(endpoint),
+    JSON.parse,
+    m.prop
+  )
+}
+</code></pre>
+<h3 id="usage-with-const">Usage with const</h3>
+<pre><code class="lang-js">// Before
+let items = base64ToJSON(response.data.content)
+items = Array.isArray(items) ? items : [items]
+
+// After
+const items = pipe(
+  base64ToJSON(response.data.content),
+  x =&gt; Array.isArray(x) ? x : [x]
+)
+</code></pre>
+<h3 id="functional-updates">Functional Updates</h3>
+<pre><code class="lang-js">// Before:
+return Event.create(
+  Object.assign(attrs, { parent_id: parentId, status: &#39;draft&#39; })
+)
+
+// After:
+return pipe(
+  Object.assign(attrs, { parent_id: parentId, status: &#39;draft&#39; }),
+  Event.create
+)
+</code></pre>
+<h2 id="reference-and-credits">Reference and credits</h2>
+<ul>
+<li><a href="http://ramdajs.com/docs/#pipe">Ramda.js pipe</a></li>
+<li><a href="https://lodash.com/docs#flow">lodash.js flow</a></li>
+<li><a href="https://github.com/JulienPalard/Pipe">pipe.py</a></li>
+<li>Some exampes taken from <a href="https://github.com/mindeavor/es-pipeline-operator/wiki/Example-Use-Cases">https://github.com/mindeavor/es-pipeline-operator/wiki/Example-Use-Cases</a></li>
+</ul>
+
+    <script src="./prism.js"></script>
   </body>
-</html>  
+</html>

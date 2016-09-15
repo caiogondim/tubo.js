@@ -7,9 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "standard test/* src/*",
+    "lint": "standard 'test/**/*.js' 'src/**/*.js'",
     "test": "tap --cov test/*.js",
-    "lint": "standard 'test/**/*.js' 'src/**/*.js'"
+    "generate-docs": "node tasks/generate-docs.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/caiogondim/pipe.js#readme",
   "devDependencies": {
+    "marked": "^0.3.6",
     "standard": "^7.1.2",
     "tap": "^7.0.0"
   }
