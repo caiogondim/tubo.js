@@ -138,3 +138,9 @@ return pipe(
 - [lodash.js flow](https://lodash.com/docs#flow)
 - [pipe.py](https://github.com/JulienPalard/Pipe)
 - Some exampes taken from https://github.com/mindeavor/es-pipeline-operator/wiki/Example-Use-Cases
+
+---
+
+[caiogondim.com](https://caiogondim.com) &nbsp;&middot;&nbsp;
+GitHub [@caiogondim](https://github.com/caiogondim) &nbsp;&middot;&nbsp;
+Twitter [@caio_gondim](https://twitter.com/caio_gondim)

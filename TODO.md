@@ -3,5 +3,5 @@
 - [ ] GA
 - [ ] favicon
 - [ ] npm publish
-- [ ] readme footer
 - [ ] codecov badge
+- [x] readme footer
