@@ -1,6 +1,6 @@
 <img src="http://rawgit.com/caiogondim/pipe.js/master/img/icon.svg">
 
-# pipe.js
+# pipeline.js
 
 <img src="http://travis-ci.org/caiogondim/pipe.js.svg?branch=master" alt="Travis CI">
 
