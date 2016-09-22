@@ -2,7 +2,8 @@
 
 # pipeline.js
 
-<img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI">
+<img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> [![codecov](https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg)](https://codecov.io/gh/caiogondim/obstructed.js)
+
 
 Pipe function works like the pipe operator more common in functional programming
 languages, like Erlang.
