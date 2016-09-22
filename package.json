@@ -1,7 +1,7 @@
 {
   "name": "@caiogondim/pipeline",
   "version": "1.0.0",
-  "description": "Function to mimic pipe operator",
+  "description": "Function to mimic pipe operator in functional languages",
   "main": "dist/index.js",
   "directories": {
     "test": "test"
