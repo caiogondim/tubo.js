@@ -9,6 +9,7 @@
   "scripts": {
     "lint": "standard 'test/**/*.js' 'src/**/*.js'",
     "test": "tap --cov test/*.js",
+    "posttest": "tap --coverage-report=lcov | codecov",
     "generate-docs": "node tasks/generate-docs.js"
   },
   "repository": {
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/caiogondim/pipeline.js#readme",
   "devDependencies": {
+    "codecov": "^1.0.1",
     "marked": "^0.3.6",
     "standard": "^7.1.2",
     "tap": "^7.0.0"
