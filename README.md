@@ -1,8 +1,8 @@
-<img src="http://rawgit.com/caiogondim/pipe.js/master/img/icon.svg">
+<img src="http://rawgit.com/caiogondim/pipeline.js/master/img/icon.svg">
 
 # pipeline.js
 
-<img src="http://travis-ci.org/caiogondim/pipe.js.svg?branch=master" alt="Travis CI">
+<img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI">
 
 Pipe function works like the pipe operator more common in functional programming
 languages, like Erlang.
