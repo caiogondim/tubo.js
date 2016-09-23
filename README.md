@@ -5,12 +5,12 @@
 <img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> [![codecov](https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg)](https://codecov.io/gh/caiogondim/obstructed.js)
 
 
-Pipe function works like the pipe operator more common in functional programming
+Pipeline works like the pipe operator more common in functional programming
 languages, like Erlang.
 
 This lib supports **sync** and **async** arguments.
 
-If all arguments are sync functions or literal, the pipe will run as a normal
+If all arguments are sync functions or literal, the pipeline will run as a normal
 function returning the last value computed. In case one of the arguments is a
 function that returns a promise or a promise instance (then-able object), a
 promise will be returned at the end.
@@ -21,34 +21,34 @@ promise will be returned at the end.
 
 ```js
 function double(x) {
-  return x * 2;
+  return x * 2
 }
 
 function square(x) {
-  return x * x;
+  return x * x
 }
 
-var output = pipe(
+var output = pipeline(
   2,
   double,
   square
-);
-console.log(output); // => 16
+)
+console.log(output) // => 16
 ```
 
 ### Async
 
 ```js
-pipe(
+pipeline(
   bookingDetails.userId,
   fetchUserById, // async
   JSON.parse
 )
   .then(function(result) {
-    console.log(result);
+    console.log(result)
   })
   .catch(function(error) {
-    console.log(error);
+    console.log(error)
   })
 ```
 
@@ -72,7 +72,7 @@ function validateEmail(email) {
 
 // After
 function validateEmail(email) {
-  return pipe(
+  return pipeline(
     email,
     trim,
     validateEmailTld,
@@ -91,13 +91,13 @@ try {
 
 ```js
 // Before
-if ( cache && localStorage.getItem(endpoint) ) {
+if (cache && localStorage.getItem(endpoint)) {
   return m.prop( JSON.parse( localStorage.get(endpoint) ) )
 }
 
 // After
-if ( cache && localStorage.getItem(endpoint) ) {
-  return pipe(
+if (cache && localStorage.getItem(endpoint)) {
+  return pipeline(
     localStorage.get(endpoint),
     JSON.parse,
     m.prop
@@ -113,7 +113,7 @@ let items = base64ToJSON(response.data.content)
 items = Array.isArray(items) ? items : [items]
 
 // After
-const items = pipe(
+const items = pipeline(
   base64ToJSON(response.data.content),
   x => Array.isArray(x) ? x : [x]
 )
@@ -128,7 +128,7 @@ return Event.create(
 )
 
 // After:
-return pipe(
+return pipeline(
   Object.assign(attrs, { parent_id: parentId, status: 'draft' }),
   Event.create
 )
