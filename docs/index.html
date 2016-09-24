@@ -23,47 +23,55 @@
     <p><img src="http://rawgit.com/caiogondim/pipeline.js/master/img/icon.svg"></p>
 <h1 id="pipeline-js">pipeline.js</h1>
 <p><img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> <a href="https://codecov.io/gh/caiogondim/obstructed.js"><img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov"></a></p>
-<p>Pipe function works like the pipe operator more common in functional programming
+<p>Pipeline works like the pipe operator more common in functional programming
 languages, like Erlang.</p>
 <p>This lib supports <strong>sync</strong> and <strong>async</strong> arguments.</p>
-<p>If all arguments are sync functions or literal, the pipe will run as a normal
+<p>If all arguments are sync functions or literal, the pipeline will run as a normal
 function returning the last value computed. In case one of the arguments is a
 function that returns a promise or a promise instance (then-able object), a
 promise will be returned at the end.</p>
 <h2 id="usage">Usage</h2>
 <h3 id="sync">Sync</h3>
 <pre><code class="lang-js">function double(x) {
-  return x * 2;
+  return x * 2
 }
 
 function square(x) {
-  return x * x;
+  return x * x
 }
 
-var output = pipe(
+var output = pipeline(
   2,
   double,
   square
-);
-console.log(output); // =&gt; 16
+)
+console.log(output) // =&gt; 16
 </code></pre>
 <h3 id="async">Async</h3>
-<pre><code class="lang-js">pipe(
+<pre><code class="lang-js">pipeline(
   bookingDetails.userId,
   fetchUserById, // async
   JSON.parse
 )
   .then(function(result) {
-    console.log(result);
+    console.log(result)
   })
   .catch(function(error) {
-    console.log(error);
+    console.log(error)
   })
 </code></pre>
 <h3 id="mixed">Mixed</h3>
 <p>It is also possible to mix sync and async arguments.
 Whenever a function that generates promises or a promise intance is found,
 the lib switchs to async mode and will return a <code>Promise</code>.</p>
+<h2 id="installation">Installation</h2>
+<p>To use the library, install it through npm</p>
+<pre><code class="lang-bash">npm install @caiogondim/pipeline --save
+</code></pre>
+<p>To port it to Browser or any other (non CJS) environment, use your favorite CJS
+bundler. No favorite yet? Try: <a href="http://browserify.org/">Browserify</a>,
+<a href="https://github.com/medikoo/modules-webmake">Webmake</a> or
+<a href="http://webpack.github.io/">Webpack</a>.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="validation-sync-and-async-">Validation (sync and async)</h3>
 <pre><code class="lang-js">// Before
@@ -75,7 +83,7 @@ function validateEmail(email) {
 
 // After
 function validateEmail(email) {
-  return pipe(
+  return pipeline(
     email,
     trim,
     validateEmailTld,
@@ -91,13 +99,13 @@ try {
 </code></pre>
 <h3 id="straight-forward-cases">Straight-forward Cases</h3>
 <pre><code class="lang-js">// Before
-if ( cache &amp;&amp; localStorage.getItem(endpoint) ) {
+if (cache &amp;&amp; localStorage.getItem(endpoint)) {
   return m.prop( JSON.parse( localStorage.get(endpoint) ) )
 }
 
 // After
-if ( cache &amp;&amp; localStorage.getItem(endpoint) ) {
-  return pipe(
+if (cache &amp;&amp; localStorage.getItem(endpoint)) {
+  return pipeline(
     localStorage.get(endpoint),
     JSON.parse,
     m.prop
@@ -110,7 +118,7 @@ let items = base64ToJSON(response.data.content)
 items = Array.isArray(items) ? items : [items]
 
 // After
-const items = pipe(
+const items = pipeline(
   base64ToJSON(response.data.content),
   x =&gt; Array.isArray(x) ? x : [x]
 )
@@ -122,7 +130,7 @@ return Event.create(
 )
 
 // After:
-return pipe(
+return pipeline(
   Object.assign(attrs, { parent_id: parentId, status: &#39;draft&#39; }),
   Event.create
 )
