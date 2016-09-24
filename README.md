@@ -58,6 +58,19 @@ It is also possible to mix sync and async arguments.
 Whenever a function that generates promises or a promise intance is found,
 the lib switchs to async mode and will return a `Promise`.
 
+## Installation
+
+To use the library, install it through npm
+
+```bash
+npm install @caiogondim/pipeline --save
+```
+
+To port it to Browser or any other (non CJS) environment, use your favorite CJS
+bundler. No favorite yet? Try: [Browserify](http://browserify.org/),
+[Webmake](https://github.com/medikoo/modules-webmake) or
+[Webpack](http://webpack.github.io/).
+
 ## Examples
 
 ### Validation (sync and async)
