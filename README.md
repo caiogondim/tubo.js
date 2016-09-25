@@ -135,12 +135,12 @@ const items = pipeline(
 ### Functional Updates
 
 ```js
-// Before:
+// Before
 return Event.create(
   Object.assign(attrs, { parent_id: parentId, status: 'draft' })
 )
 
-// After:
+// After
 return pipeline(
   Object.assign(attrs, { parent_id: parentId, status: 'draft' }),
   Event.create
