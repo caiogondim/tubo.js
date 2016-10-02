@@ -6,7 +6,7 @@
 
 
 Pipeline works like the pipe operator more common in functional programming
-languages, like Erlang.
+languages, like Elixir.
 
 This lib supports **sync** and **async** arguments.
 
