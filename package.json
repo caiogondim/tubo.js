@@ -1,6 +1,6 @@
 {
   "name": "@caiogondim/pipeline",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Your functional (sync/async) pipe | operator",
   "main": "src/index.js",
   "directories": {
