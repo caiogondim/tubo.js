@@ -22,7 +22,7 @@
     "functional"
   ],
   "author": "Caio Gondim <me@caiogondim.com> (http://caiogondim.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/caiogondim/pipe.js/issues"
   },
