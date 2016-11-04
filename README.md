@@ -1,9 +1,12 @@
 <img src="http://rawgit.com/caiogondim/pipeline.js/master/img/icon.svg">
 
-# pipeline.js
+<h1 align="center">pipeline.js</h1>
 
-<img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> [![codecov](https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg)](https://codecov.io/gh/caiogondim/obstructed.js)
+<div align="center">
+  <img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> <img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov">
+</div>
 
+<br>
 
 Pipeline works like the pipe operator more common in functional programming
 languages, like Elixir.
