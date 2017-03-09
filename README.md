@@ -3,7 +3,7 @@
 <h1 align="center">pipeline.js</h1>
 
 <div align="center">
-  <img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> <img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov">
+  <img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> <img src="http://img.badgesize.io/caiogondim/pipeline.js/master/src/index.js?compression=gzip"> <img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov">
 </div>
 
 <br>
