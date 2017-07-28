@@ -1,5 +1,5 @@
 {
-  "name": "@caiogondim/pipeline",
+  "name": "tubo",
   "version": "1.0.6",
   "description": "Your functional (sync/async) pipe | operator",
   "main": "src/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiogondim/pipeline.js.git"
+    "url": "git+https://github.com/caiogondim/tubo.js.git"
   },
   "keywords": [
     "pipeline",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/caiogondim/pipe.js/issues"
   },
-  "homepage": "https://github.com/caiogondim/pipeline.js#readme",
+  "homepage": "https://github.com/caiogondim/tubo.js#readme",
   "devDependencies": {
     "codecov": "^1.0.1",
     "marked": "^0.3.6",

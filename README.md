@@ -1,14 +1,14 @@
-<img src="http://rawgit.com/caiogondim/pipeline.js/master/img/icon.svg">
+<img src="http://rawgit.com/caiogondim/tubo.js/master/img/icon.svg">
 
-<h1 align="center">pipeline.js</h1>
+<h1 align="center">tubo.js</h1>
 
 <div align="center">
-  <img src="http://travis-ci.org/caiogondim/pipeline.js.svg?branch=master" alt="Travis CI"> <img src="http://img.badgesize.io/caiogondim/pipeline.js/master/src/index.js?compression=gzip"> <img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov">
+  <img src="http://travis-ci.org/caiogondim/tubo.js.svg?branch=master" alt="Travis CI"> <img src="http://img.badgesize.io/caiogondim/tubo.js/master/src/index.js?compression=gzip"> <img src="https://codecov.io/gh/caiogondim/obstructed.js/branch/master/graph/badge.svg" alt="codecov">
 </div>
 
 <br>
 
-Pipeline works like the pipe operator more common in functional programming
+Tubo works like the pipe operator more common in functional programming
 languages, like Elixir.
 
 This lib supports **sync** and **async** arguments.
@@ -31,7 +31,7 @@ function square(x) {
   return x * x
 }
 
-var output = pipeline(
+var output = tubo(
   2,
   double,
   square
@@ -42,7 +42,7 @@ console.log(output) // => 16
 ### Async
 
 ```js
-pipeline(
+tubo(
   bookingDetails.userId,
   fetchUserById, // async
   JSON.parse
@@ -66,7 +66,7 @@ the lib switchs to async mode and will return a `Promise`.
 To use the library, install it through npm
 
 ```bash
-npm install @caiogondim/pipeline --save
+npm install tubo --save
 ```
 
 To port it to Browser or any other (non CJS) environment, use your favorite CJS
@@ -88,7 +88,7 @@ function validateEmail(email) {
 
 // After
 function validateEmail(email) {
-  return pipeline(
+  return tubo(
     email,
     trim,
     validateEmailTld,
@@ -113,7 +113,7 @@ if (cache && localStorage.getItem(endpoint)) {
 
 // After
 if (cache && localStorage.getItem(endpoint)) {
-  return pipeline(
+  return tubo(
     localStorage.get(endpoint),
     JSON.parse,
     m.prop
@@ -129,7 +129,7 @@ let items = base64ToJSON(response.data.content)
 items = Array.isArray(items) ? items : [items]
 
 // After
-const items = pipeline(
+const items = tubo(
   base64ToJSON(response.data.content),
   x => Array.isArray(x) ? x : [x]
 )
@@ -144,7 +144,7 @@ return Event.create(
 )
 
 // After
-return pipeline(
+return tubo(
   Object.assign(attrs, { parent_id: parentId, status: 'draft' }),
   Event.create
 )
