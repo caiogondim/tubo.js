@@ -42,6 +42,21 @@ console.log(output) // => 16
 ### Async
 
 ```js
+try {
+  const result = await tubo(
+    bookingDetails.userId,
+    fetchUserById, // async
+    JSON.parse
+  )
+  console.log(result)
+} catch (error) {
+  console.error(error)
+}
+```
+
+### Async with Promise
+
+```js
 tubo(
   bookingDetails.userId,
   fetchUserById, // async
