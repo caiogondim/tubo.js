@@ -6,6 +6,7 @@
   "directories": {
     "test": "test"
   },
+  "files": ["bundle"],
   "scripts": {
     "build": "microbundle src/index.js -o build/",
     "lint": "standard 'test/**/*.js' 'src/**/*.js'",
