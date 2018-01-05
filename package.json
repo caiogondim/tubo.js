@@ -6,7 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "files": ["bundle"],
   "scripts": {
+    "build": "microbundle src/index.js -o build/",
     "lint": "standard 'test/**/*.js' 'src/**/*.js'",
     "test": "tap --cov test/*.js",
     "posttest": "tap --coverage-report=lcov | codecov",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "codecov": "^1.0.1",
     "marked": "^0.3.6",
+    "microbundle": "^0.2.4",
     "standard": "^7.1.2",
     "tap": "^7.0.0"
   }
