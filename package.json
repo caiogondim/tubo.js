@@ -29,7 +29,7 @@
   "homepage": "https://github.com/caiogondim/tubo.js#readme",
   "devDependencies": {
     "codecov": "^1.0.1",
-    "marked": "^0.3.12",
+    "marked": "^0.3.15",
     "standard": "^7.1.2",
     "tap": "^11.1.1"
   }
