@@ -1,11 +1,12 @@
-const isThenable = obj => {
+function isThenable(obj) {
   return typeof obj === 'object' && typeof obj.then === 'function'
 }
 
-const pipe = (...procs) => {
-  let output
+function pipe() {
+  var procs = Array.prototype.slice.call(arguments)
+  var output
 
-  procs.forEach((proc, i) => {
+  procs.forEach(function(proc, i) {
     if (isThenable(output)) {
       output = output.then(proc)
     } else if (typeof proc === 'function') {

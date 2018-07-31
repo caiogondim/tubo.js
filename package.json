@@ -10,7 +10,6 @@
     "lint": "standard 'test/**/*.js' 'src/**/*.js'",
     "test": "tap --cov test/*.js",
     "posttest": "tap --coverage-report=lcov | codecov",
-    "generate-docs": "node tasks/generate-docs.js"
   },
   "repository": {
     "type": "git",
