@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "standard 'test/**/*.js' 'src/**/*.js'",
     "test": "tap --cov test/*.js",
-    "posttest": "tap --coverage-report=lcov | codecov",
+    "posttest": "tap --coverage-report=lcov | codecov"
   },
   "repository": {
     "type": "git",
